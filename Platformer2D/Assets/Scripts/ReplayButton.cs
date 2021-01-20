@@ -1,14 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
-public class PointSystem : MonoBehaviour
+public class ReplayButton : MonoBehaviour
 {
-    public int points;
-    public Text ScoreBoard;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +18,8 @@ public class PointSystem : MonoBehaviour
         
     }
 
-    public void ScoreBoardModifier()
+    public void OnClick()
     {
-        points++;
-        ScoreBoard.text = points.ToString();
-
+        SceneManager.LoadScene(0);
     }
 }

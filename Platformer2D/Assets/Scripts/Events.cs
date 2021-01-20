@@ -1,14 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
-public class PointSystem : MonoBehaviour
+public class Events : MonoBehaviour
 {
-    public int points;
-    public Text ScoreBoard;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +14,10 @@ public class PointSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (FindObjectOfType<PointSystem>().points == 3)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
-
-    public void ScoreBoardModifier()
-    {
-        points++;
-        ScoreBoard.text = points.ToString();
-
-    }
+    
 }

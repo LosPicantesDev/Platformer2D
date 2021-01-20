@@ -946,6 +946,7 @@ GameObject:
   - component: {fileID: 1973114244}
   - component: {fileID: 1973114243}
   - component: {fileID: 1973114246}
+  - component: {fileID: 1973114247}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1013,7 +1014,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ba0c8722f810b4980b256fcaf77c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 0
   ScoreBoard: {fileID: 1568623972}
+--- !u!114 &1973114247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973114242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bbd05d52f3741d4b9d5f6941fd2918a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2158230719301406571
 PrefabInstance:
   m_ObjectHideFlags: 0
