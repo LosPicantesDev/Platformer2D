@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody2D rb;
+    public GameObject moonRock;
     public float speed;
     public float jumpForce;
     // Start is called before the first frame update
@@ -29,5 +30,12 @@ public class Movement : MonoBehaviour
         {
             rb.AddForce(new Vector2(0,1 * jumpForce),ForceMode2D.Impulse);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(moonRock);
+        Debug.Log("La piedra fue destruida!");
+        Debug.Log(other.name);
     }
 }
