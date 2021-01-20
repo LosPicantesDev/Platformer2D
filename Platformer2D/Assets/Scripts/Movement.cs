@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    private bool onTheFloor;
     Rigidbody2D rb;
-    public GameObject moonRock;
     public float speed;
     public float jumpForce;
     // Start is called before the first frame update
@@ -17,25 +17,34 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.D))
+        if (onTheFloor)
         {
-            rb.AddForce(new Vector2(1 * speed,0));
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(new Vector2(-1 * speed, 0));
-        }
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.AddForce(new Vector2(1 * speed, 0));
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                rb.AddForce(new Vector2(-1 * speed, 0));
+            }
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            rb.AddForce(new Vector2(0,1 * jumpForce),ForceMode2D.Impulse);
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                rb.AddForce(new Vector2(0, 1 * jumpForce), ForceMode2D.Impulse);
+                onTheFloor = false;
+            }
+
+
         }
+        
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(moonRock);
-        Debug.Log("La piedra fue destruida!");
-        Debug.Log(other.name);
+        if (collision.gameObject.tag == "Floor")
+        {
+            onTheFloor = true;
+        }       
     }
+
 }

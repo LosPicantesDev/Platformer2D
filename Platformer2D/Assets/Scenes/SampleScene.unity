@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 11260967}
   m_Layer: 0
   m_Name: AstronautIdle
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eef8654dafd61246aaa2fa2b90e2e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moonRock: {fileID: 581066751}
   speed: 1.5
   jumpForce: 13
 --- !u!50 &11260968
@@ -495,12 +494,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a6b8712be5bc8647af0eeb2e631e7e9, type: 3}
---- !u!1 &581066751 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3700323717826752474, guid: 2a6b8712be5bc8647af0eeb2e631e7e9,
-    type: 3}
-  m_PrefabInstance: {fileID: 2158230719301406571}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1313079447
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +507,7 @@ GameObject:
   - component: {fileID: 1313079448}
   m_Layer: 0
   m_Name: GroundTile
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
