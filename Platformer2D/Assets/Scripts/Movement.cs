@@ -5,7 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody2D rb;
-
+    public float speed;
+    public float jumpForce;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,18 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.AddTorque(-1);
+        if (Input.GetKey(KeyCode.D))
+        {
+            rb.AddForce(new Vector2(1 * speed,0));
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            rb.AddForce(new Vector2(-1 * speed, 0));
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            rb.AddForce(new Vector2(0,1 * jumpForce),ForceMode2D.Impulse);
+        }
     }
 }
